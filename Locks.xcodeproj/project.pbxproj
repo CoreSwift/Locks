@@ -1,0 +1,761 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7E4F3730235925E500711161 /* LockableTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F372F235925E500711161 /* LockableTestCase.swift */; };
+		7E4F373423592EFD00711161 /* RecursiveLockableTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F373323592EFD00711161 /* RecursiveLockableTestCase.swift */; };
+		7E4F373D23593EBA00711161 /* Lockable+DefaultImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F373C23593EBA00711161 /* Lockable+DefaultImplementation.swift */; };
+		7E4F374B235943CC00711161 /* RecursiveCPPStdLockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F3749235943CC00711161 /* RecursiveCPPStdLockTests.swift */; };
+		7E4F374C235943CC00711161 /* CPPStdLockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F374A235943CC00711161 /* CPPStdLockTests.swift */; };
+		7E4F375A23594A2C00711161 /* std_lock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F37422359420400711161 /* std_lock.cpp */; };
+		7E4F375C23594B5200711161 /* libCoreSwiftCxxLock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E4F375123594A1500711161 /* libCoreSwiftCxxLock.a */; };
+		7E4F375F23594B6B00711161 /* CPPStdRecursiveLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F37452359439200711161 /* CPPStdRecursiveLock.swift */; };
+		7E4F376023594B6B00711161 /* CPPStdLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F37462359439200711161 /* CPPStdLock.swift */; };
+		7E4F37632359536100711161 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E4F37622359533D00711161 /* libc++.tbd */; };
+		7E4F37652359609C00711161 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F37642359609C00711161 /* XCTestManifests.swift */; };
+		7E719FD021EA88D6005E5861 /* LockableTestCaseBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E719FCF21EA88D6005E5861 /* LockableTestCaseBase.swift */; };
+		7E719FD221EA8CAB005E5861 /* NSLockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E719FD121EA8CAB005E5861 /* NSLockTests.swift */; };
+		7E719FD421EA8CB9005E5861 /* NSRecursiveLockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E719FD321EA8CB9005E5861 /* NSRecursiveLockTests.swift */; };
+		7E719FD821EA9A50005E5861 /* UnfairLockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E719FD721EA9A50005E5861 /* UnfairLockTests.swift */; };
+		7EBECC2321F4FF6600F95988 /* PThreadRecursiveLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBECC2221F4FF6600F95988 /* PThreadRecursiveLock.swift */; };
+		7EBECC2621F4FF9500F95988 /* PThreadMutex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBECC2521F4FF9500F95988 /* PThreadMutex.swift */; };
+		7EBECC2A21F5060D00F95988 /* RecursivePThreadLockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBECC2921F5060D00F95988 /* RecursivePThreadLockTests.swift */; };
+		OBJ_36 /* NSLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* NSLock.swift */; };
+		OBJ_37 /* NSRecursiveLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* NSRecursiveLock.swift */; };
+		OBJ_38 /* PThreadLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* PThreadLock.swift */; };
+		OBJ_40 /* UnfairLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* UnfairLock.swift */; };
+		OBJ_41 /* Lockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* Lockable.swift */; };
+		OBJ_62 /* FakeLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* FakeLock.swift */; };
+		OBJ_63 /* FakeLockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* FakeLockTests.swift */; };
+		OBJ_64 /* LockableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* LockableTests.swift */; };
+		OBJ_65 /* PThreadLockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* PThreadLockTests.swift */; };
+		OBJ_68 /* CoreSwiftLocks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Locks::Locks::Product" /* CoreSwiftLocks.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7E4F375D23594B5200711161 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E4F375023594A1500711161;
+			remoteInfo = CoreSwiftStdLock;
+		};
+		7E719FC721E96453005E5861 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Locks::Locks";
+			remoteInfo = Locks;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7E4F374F23594A1500711161 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7E4F371C23566E6F00711161 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		7E4F372F235925E500711161 /* LockableTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockableTestCase.swift; sourceTree = "<group>"; };
+		7E4F373323592EFD00711161 /* RecursiveLockableTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecursiveLockableTestCase.swift; sourceTree = "<group>"; };
+		7E4F373C23593EBA00711161 /* Lockable+DefaultImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lockable+DefaultImplementation.swift"; sourceTree = "<group>"; };
+		7E4F37412359420400711161 /* core_swift_std_lock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = core_swift_std_lock.h; sourceTree = "<group>"; };
+		7E4F37422359420400711161 /* std_lock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = std_lock.cpp; sourceTree = "<group>"; };
+		7E4F37452359439200711161 /* CPPStdRecursiveLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPPStdRecursiveLock.swift; sourceTree = "<group>"; };
+		7E4F37462359439200711161 /* CPPStdLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPPStdLock.swift; sourceTree = "<group>"; };
+		7E4F3749235943CC00711161 /* RecursiveCPPStdLockTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecursiveCPPStdLockTests.swift; sourceTree = "<group>"; };
+		7E4F374A235943CC00711161 /* CPPStdLockTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPPStdLockTests.swift; sourceTree = "<group>"; };
+		7E4F375123594A1500711161 /* libCoreSwiftCxxLock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCoreSwiftCxxLock.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E4F37612359525800711161 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		7E4F37622359533D00711161 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		7E4F37642359609C00711161 /* XCTestManifests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		7E4F376723599E8300711161 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		7E4F37682359A3C600711161 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7E719FCF21EA88D6005E5861 /* LockableTestCaseBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockableTestCaseBase.swift; sourceTree = "<group>"; };
+		7E719FD121EA8CAB005E5861 /* NSLockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLockTests.swift; sourceTree = "<group>"; };
+		7E719FD321EA8CB9005E5861 /* NSRecursiveLockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRecursiveLockTests.swift; sourceTree = "<group>"; };
+		7E719FD721EA9A50005E5861 /* UnfairLockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnfairLockTests.swift; sourceTree = "<group>"; };
+		7EBECC2221F4FF6600F95988 /* PThreadRecursiveLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadRecursiveLock.swift; sourceTree = "<group>"; };
+		7EBECC2521F4FF9500F95988 /* PThreadMutex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadMutex.swift; sourceTree = "<group>"; };
+		7EBECC2921F5060D00F95988 /* RecursivePThreadLockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecursivePThreadLockTests.swift; sourceTree = "<group>"; };
+		"Locks::Locks::Product" /* CoreSwiftLocks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CoreSwiftLocks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Locks::LocksTests::Product" /* LocksTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = LocksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_10 /* NSLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLock.swift; sourceTree = "<group>"; };
+		OBJ_11 /* NSRecursiveLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRecursiveLock.swift; sourceTree = "<group>"; };
+		OBJ_12 /* PThreadLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadLock.swift; sourceTree = "<group>"; };
+		OBJ_14 /* UnfairLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnfairLock.swift; sourceTree = "<group>"; };
+		OBJ_15 /* Lockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lockable.swift; sourceTree = "<group>"; };
+		OBJ_22 /* FakeLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLock.swift; sourceTree = "<group>"; };
+		OBJ_23 /* FakeLockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLockTests.swift; sourceTree = "<group>"; };
+		OBJ_24 /* LockableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockableTests.swift; sourceTree = "<group>"; };
+		OBJ_25 /* PThreadLockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadLockTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7E4F374E23594A1500711161 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				7E4F37632359536100711161 /* libc++.tbd in Frameworks */,
+				7E4F375C23594B5200711161 /* libCoreSwiftCxxLock.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_68 /* CoreSwiftLocks.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7E4F37152356628E00711161 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				7E4F37442359439200711161 /* CPPStd */,
+				7E4F37162356629600711161 /* Darwin */,
+				7E4F3717235662B700711161 /* Foundation */,
+				7E4F37182356634200711161 /* PThread */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		7E4F37162356629600711161 /* Darwin */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_14 /* UnfairLock.swift */,
+			);
+			path = Darwin;
+			sourceTree = "<group>";
+		};
+		7E4F3717235662B700711161 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_10 /* NSLock.swift */,
+				OBJ_11 /* NSRecursiveLock.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		7E4F37182356634200711161 /* PThread */ = {
+			isa = PBXGroup;
+			children = (
+				7EBECC2521F4FF9500F95988 /* PThreadMutex.swift */,
+				7EBECC2221F4FF6600F95988 /* PThreadRecursiveLock.swift */,
+				OBJ_12 /* PThreadLock.swift */,
+			);
+			path = PThread;
+			sourceTree = "<group>";
+		};
+		7E4F371F23591E7900711161 /* CoreSwiftLocks */ = {
+			isa = PBXGroup;
+			children = (
+				7E4F372023591EDB00711161 /* API */,
+				7E4F37152356628E00711161 /* Implementations */,
+			);
+			path = CoreSwiftLocks;
+			sourceTree = "<group>";
+		};
+		7E4F372023591EDB00711161 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_15 /* Lockable.swift */,
+				7E4F373C23593EBA00711161 /* Lockable+DefaultImplementation.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		7E4F373523593BB900711161 /* ImplementationTests */ = {
+			isa = PBXGroup;
+			children = (
+				7E4F374A235943CC00711161 /* CPPStdLockTests.swift */,
+				7E719FD121EA8CAB005E5861 /* NSLockTests.swift */,
+				7E719FD321EA8CB9005E5861 /* NSRecursiveLockTests.swift */,
+				OBJ_25 /* PThreadLockTests.swift */,
+				7E4F3749235943CC00711161 /* RecursiveCPPStdLockTests.swift */,
+				7EBECC2921F5060D00F95988 /* RecursivePThreadLockTests.swift */,
+				7E719FD721EA9A50005E5861 /* UnfairLockTests.swift */,
+			);
+			path = ImplementationTests;
+			sourceTree = "<group>";
+		};
+		7E4F373E2359420400711161 /* CoreSwiftCxxLock */ = {
+			isa = PBXGroup;
+			children = (
+				7E4F37422359420400711161 /* std_lock.cpp */,
+				7E4F37402359420400711161 /* include */,
+			);
+			path = CoreSwiftCxxLock;
+			sourceTree = "<group>";
+		};
+		7E4F37402359420400711161 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				7E4F37412359420400711161 /* core_swift_std_lock.h */,
+				7E4F37612359525800711161 /* module.modulemap */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		7E4F37442359439200711161 /* CPPStd */ = {
+			isa = PBXGroup;
+			children = (
+				7E4F37452359439200711161 /* CPPStdRecursiveLock.swift */,
+				7E4F37462359439200711161 /* CPPStdLock.swift */,
+			);
+			path = CPPStd;
+			sourceTree = "<group>";
+		};
+		7E4F375B23594B5200711161 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E4F37622359533D00711161 /* libc++.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7EBECC2721F500CB00F95988 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_23 /* FakeLockTests.swift */,
+				OBJ_24 /* LockableTests.swift */,
+				7E4F373523593BB900711161 /* ImplementationTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		7EBECC2821F500DF00F95988 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_22 /* FakeLock.swift */,
+				7E719FCF21EA88D6005E5861 /* LockableTestCaseBase.swift */,
+				7E4F372F235925E500711161 /* LockableTestCase.swift */,
+				7E4F373323592EFD00711161 /* RecursiveLockableTestCase.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		OBJ_20 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_21 /* CoreSwiftLocksTests */,
+			);
+			path = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_21 /* CoreSwiftLocksTests */ = {
+			isa = PBXGroup;
+			children = (
+				7E4F37642359609C00711161 /* XCTestManifests.swift */,
+				7EBECC2821F500DF00F95988 /* Util */,
+				7EBECC2721F500CB00F95988 /* Tests */,
+			);
+			name = CoreSwiftLocksTests;
+			path = Tests/CoreSwiftLocksTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_27 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"Locks::Locks::Product" /* CoreSwiftLocks.framework */,
+				"Locks::LocksTests::Product" /* LocksTests.xctest */,
+				7E4F375123594A1500711161 /* libCoreSwiftCxxLock.a */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_5 = {
+			isa = PBXGroup;
+			children = (
+				7E4F37682359A3C600711161 /* README.md */,
+				7E4F376723599E8300711161 /* LICENSE */,
+				7E4F371C23566E6F00711161 /* Package.swift */,
+				OBJ_7 /* Source */,
+				OBJ_20 /* Tests */,
+				OBJ_27 /* Products */,
+				7E4F375B23594B5200711161 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				7E4F371F23591E7900711161 /* CoreSwiftLocks */,
+				7E4F373E2359420400711161 /* CoreSwiftCxxLock */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7E4F375023594A1500711161 /* CoreSwiftCxxLock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E4F375723594A1500711161 /* Build configuration list for PBXNativeTarget "CoreSwiftCxxLock" */;
+			buildPhases = (
+				7E4F374D23594A1500711161 /* Sources */,
+				7E4F374E23594A1500711161 /* Frameworks */,
+				7E4F374F23594A1500711161 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoreSwiftCxxLock;
+			productName = CoreSwiftStdLock;
+			productReference = 7E4F375123594A1500711161 /* libCoreSwiftCxxLock.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		"Locks::Locks" /* CoreSwiftLocks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_32 /* Build configuration list for PBXNativeTarget "CoreSwiftLocks" */;
+			buildPhases = (
+				OBJ_35 /* Sources */,
+				OBJ_42 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E4F375E23594B5200711161 /* PBXTargetDependency */,
+			);
+			name = CoreSwiftLocks;
+			productName = Locks;
+			productReference = "Locks::Locks::Product" /* CoreSwiftLocks.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"Locks::LocksTests" /* LocksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_58 /* Build configuration list for PBXNativeTarget "LocksTests" */;
+			buildPhases = (
+				OBJ_61 /* Sources */,
+				OBJ_67 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_70 /* PBXTargetDependency */,
+			);
+			name = LocksTests;
+			productName = LocksTests;
+			productReference = "Locks::LocksTests::Product" /* LocksTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 9999;
+				TargetAttributes = {
+					7E4F375023594A1500711161 = {
+						CreatedOnToolsVersion = 11.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "Locks" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+			);
+			mainGroup = OBJ_5;
+			productRefGroup = OBJ_27 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"Locks::Locks" /* CoreSwiftLocks */,
+				"Locks::LocksTests" /* LocksTests */,
+				7E4F375023594A1500711161 /* CoreSwiftCxxLock */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7E4F374D23594A1500711161 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E4F375A23594A2C00711161 /* std_lock.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_36 /* NSLock.swift in Sources */,
+				OBJ_37 /* NSRecursiveLock.swift in Sources */,
+				7E4F373D23593EBA00711161 /* Lockable+DefaultImplementation.swift in Sources */,
+				OBJ_38 /* PThreadLock.swift in Sources */,
+				7EBECC2621F4FF9500F95988 /* PThreadMutex.swift in Sources */,
+				OBJ_40 /* UnfairLock.swift in Sources */,
+				7E4F376023594B6B00711161 /* CPPStdLock.swift in Sources */,
+				7EBECC2321F4FF6600F95988 /* PThreadRecursiveLock.swift in Sources */,
+				7E4F375F23594B6B00711161 /* CPPStdRecursiveLock.swift in Sources */,
+				OBJ_41 /* Lockable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				7E719FD421EA8CB9005E5861 /* NSRecursiveLockTests.swift in Sources */,
+				7E719FD221EA8CAB005E5861 /* NSLockTests.swift in Sources */,
+				OBJ_62 /* FakeLock.swift in Sources */,
+				OBJ_63 /* FakeLockTests.swift in Sources */,
+				7E719FD821EA9A50005E5861 /* UnfairLockTests.swift in Sources */,
+				OBJ_64 /* LockableTests.swift in Sources */,
+				7E4F374C235943CC00711161 /* CPPStdLockTests.swift in Sources */,
+				7E4F37652359609C00711161 /* XCTestManifests.swift in Sources */,
+				7E719FD021EA88D6005E5861 /* LockableTestCaseBase.swift in Sources */,
+				7E4F374B235943CC00711161 /* RecursiveCPPStdLockTests.swift in Sources */,
+				7E4F373423592EFD00711161 /* RecursiveLockableTestCase.swift in Sources */,
+				7EBECC2A21F5060D00F95988 /* RecursivePThreadLockTests.swift in Sources */,
+				7E4F3730235925E500711161 /* LockableTestCase.swift in Sources */,
+				OBJ_65 /* PThreadLockTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7E4F375E23594B5200711161 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E4F375023594A1500711161 /* CoreSwiftCxxLock */;
+			targetProxy = 7E4F375D23594B5200711161 /* PBXContainerItemProxy */;
+		};
+		OBJ_70 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Locks::Locks" /* CoreSwiftLocks */;
+			targetProxy = 7E719FC721E96453005E5861 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7E4F375823594A1500711161 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Source/CoreSwiftCxxLock/include";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MODULEMAP_FILE = "$(SRCROOT)/Source/CoreSwiftCxxLock/include/module.modulemap";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7E4F375923594A1500711161 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Source/CoreSwiftCxxLock/include";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MODULEMAP_FILE = "$(SRCROOT)/Source/CoreSwiftCxxLock/include/module.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "SWIFT_PACKAGE DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Source/std_lock/include";
+				INFOPLIST_FILE = Locks.xcodeproj/Locks_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = io.coreswift.locks;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Source/CoreSwiftCxxLock/include";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = CoreSwiftLocks;
+			};
+			name = Debug;
+		};
+		OBJ_34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Source/std_lock/include";
+				INFOPLIST_FILE = Locks.xcodeproj/Locks_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = io.coreswift.locks;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Source/CoreSwiftCxxLock/include";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = CoreSwiftLocks;
+			};
+			name = Release;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+		OBJ_59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Sources/std_lock/include",
+				);
+				INFOPLIST_FILE = Locks.xcodeproj/LocksTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.2;
+				TARGET_NAME = LocksTests;
+			};
+			name = Debug;
+		};
+		OBJ_60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Sources/std_lock/include",
+				);
+				INFOPLIST_FILE = Locks.xcodeproj/LocksTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.2;
+				TARGET_NAME = LocksTests;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7E4F375723594A1500711161 /* Build configuration list for PBXNativeTarget "CoreSwiftCxxLock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E4F375823594A1500711161 /* Debug */,
+				7E4F375923594A1500711161 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_2 /* Build configuration list for PBXProject "Locks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_32 /* Build configuration list for PBXNativeTarget "CoreSwiftLocks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_33 /* Debug */,
+				OBJ_34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_58 /* Build configuration list for PBXNativeTarget "LocksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_59 /* Debug */,
+				OBJ_60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
+}
