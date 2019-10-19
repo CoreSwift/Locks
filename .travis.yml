@@ -1,0 +1,65 @@
+language: swift
+os: osx
+osx_image: xcode11
+stages:
+  - name: validation
+  - name: swiftpm
+  - name: xcode
+jobs:
+  include:
+    - stage: validation
+      name: Validate Linux test coverage completeness
+      install: swift test --generate-linuxmain -Xswiftc -target -Xswiftc x86_64-apple-macosx10.12
+      script: git diff --exit-code
+
+    #
+    # Xcode Tests
+    #
+    - &xcode_test
+      stage: xcode
+      name: macOS / Xcode 11
+      xcode_project: Locks.xcodeproj
+      xcode_scheme: CoreSwiftLocks
+      xcode_destination: 'platform=macOS'
+    - <<: *xcode_test
+      name: iOS / Xcode 11
+      xcode_destination: 'platform=iOS Simulator,OS=12.2,name=iPhone SE'
+    - <<: *xcode_test
+      name: tvOS / Xcode 11
+      xcode_destination: 'platform=tvOS Simulator,OS=12.2,name=Apple TV'
+
+    #
+    # SwiftPM Apple Tests
+    #
+    - &swiftpm_test_apple
+      stage: swiftpm
+      name: 'macOS / Swift 4 / Compiler 5.1'
+      osx_image: xcode11
+      env: SWIFT_LANG_VERSION=4
+      script: swift test -Xswiftc -swift-version -Xswiftc $SWIFT_LANG_VERSION
+    - <<: *swiftpm_test_apple
+      name: 'macOS / Swift 4.2 / Compiler 5.1'
+      env: SWIFT_LANG_VERSION=4.2
+    - <<: *swiftpm_test_apple
+      name: 'macOS / Swift 5 / Compiler 5.1'
+      env: SWIFT_LANG_VERSION=5
+
+    #
+    # SwiftPM Linux Tests
+    #
+    - &swiftpm_test_linux
+      stage: swiftpm
+      name: Linux Test / Swift 4 / Compiler 5.1.1
+      env: SWIFT_LANG_VERSION=4 SWIFT_VERSION=5.1.1
+      os: linux
+      dist: trusty
+      language: generic
+      before_install: eval "$(curl -sL https://swiftenv.fuller.li/install.sh)"
+      script: swift test -Xswiftc -swift-version -Xswiftc $SWIFT_LANG_VERSION
+      osx_image: null
+    - <<: *swiftpm_test_linux
+      env: SWIFT_LANG_VERSION=4.2 SWIFT_VERSION=5.1.1
+      name: Linux Test / Swift 4.2 / Compiler 5.1.1
+    - <<: *swiftpm_test_linux
+      env: SWIFT_LANG_VERSION=5 SWIFT_VERSION=5.1.1
+      name: Linux Test / Swift 5 / Compiler 5.1.1
