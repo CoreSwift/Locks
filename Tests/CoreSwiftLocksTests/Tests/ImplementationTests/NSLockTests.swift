@@ -9,17 +9,24 @@
 //
 // -------------------------------------------------------------------------- //
 
-#if canImport(Foundation)
-
 import CoreSwiftLocks
 import XCTest
 
-final class NSLockTests: LockableTestCase {
+class NSLockTests: XCTestCase {
 
-  override func makeLock() -> Lockable {
-    return NSLock()
+  final func testBasicLocking() throws {
+    #if canImport(Foundation)
+    let lock = NSLock()
+    runBasicLockTest(lock: lock)
+    #endif  // canImport(Foundation)
+  }
+
+  final func testPerformance() {
+    #if canImport(Foundation)
+    let lock = NSLock()
+    runPerformanceTest(lock: lock)
+    #endif  // canImport(Foundation)
   }
 
 }
 
-#endif  // canImport(Foundation)

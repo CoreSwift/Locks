@@ -9,17 +9,23 @@
 //
 // -------------------------------------------------------------------------- //
 
-#if canImport(Foundation) || canImport(Darwin) || canImport(Glibc)
-
 import CoreSwiftLocks
 import XCTest
 
-class PThreadLockTests: LockableTestCase {
+class PThreadLockTests: XCTestCase {
 
-  override func makeLock() -> Lockable {
-    return PThreadLock()
+  final func testBasicLocking() throws {
+    #if canImport(Darwin) || canImport(Glibc)
+    let lock = PThreadLock()
+    runBasicLockTest(lock: lock)
+    #endif  // canImport(Darwin) || canImport(Glibc)
+  }
+
+  final func testPerformance() {
+    #if canImport(Darwin) || canImport(Glibc)
+    let lock = PThreadLock()
+    runPerformanceTest(lock: lock)
+    #endif  // canImport(Darwin) || canImport(Glibc)
   }
 
 }
-
-#endif  // canImport(Foundation) || canImport(Darwin) || canImport(Glibc)

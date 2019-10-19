@@ -35,8 +35,8 @@ class PThreadMutex {
     /// Returns a pthread-friendly mutex type for the given lock type.
     var mutexType: Int32 {
       switch self {
-      case .normal: return PTHREAD_MUTEX_NORMAL
-      case .recursive: return PTHREAD_MUTEX_RECURSIVE
+      case .normal: return Int32(PTHREAD_MUTEX_NORMAL)
+      case .recursive: return Int32(PTHREAD_MUTEX_RECURSIVE)
       }
     }
   }

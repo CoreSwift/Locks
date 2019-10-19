@@ -9,17 +9,30 @@
 //
 // -------------------------------------------------------------------------- //
 
-#if canImport(Foundation)
-
 import CoreSwiftLocks
 import XCTest
 
-final class NSRecursiveLockTests: RecursiveLockableTestCase {
+class NSRecursiveLockTests: XCTestCase {
 
-  override func makeLock() -> RecursiveLockable {
-    return NSRecursiveLock()
+  func testBasicLocking() {
+    #if canImport(Foundation)
+    let lock = NSRecursiveLock()
+    runBasicLockTest(lock: lock)
+    #endif  // canImport(Foundation)
+  }
+
+  func testRecursiveLocking() {
+    #if canImport(Foundation)
+    let lock = NSRecursiveLock()
+    runRecursiveLockTest(lock: lock)
+    #endif  // canImport(Foundation)
+  }
+
+  func testPerformance() {
+    #if canImport(Foundation)
+    let lock = NSRecursiveLock()
+    runPerformanceTest(lock: lock)
+    #endif  // canImport(Foundation)
   }
 
 }
-
-#endif

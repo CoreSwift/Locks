@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E4F3730235925E500711161 /* LockableTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F372F235925E500711161 /* LockableTestCase.swift */; };
-		7E4F373423592EFD00711161 /* RecursiveLockableTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F373323592EFD00711161 /* RecursiveLockableTestCase.swift */; };
 		7E4F373D23593EBA00711161 /* Lockable+DefaultImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F373C23593EBA00711161 /* Lockable+DefaultImplementation.swift */; };
 		7E4F374B235943CC00711161 /* RecursiveCPPStdLockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F3749235943CC00711161 /* RecursiveCPPStdLockTests.swift */; };
 		7E4F374C235943CC00711161 /* CPPStdLockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F374A235943CC00711161 /* CPPStdLockTests.swift */; };
@@ -18,7 +16,7 @@
 		7E4F376023594B6B00711161 /* CPPStdLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F37462359439200711161 /* CPPStdLock.swift */; };
 		7E4F37632359536100711161 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E4F37622359533D00711161 /* libc++.tbd */; };
 		7E4F37652359609C00711161 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F37642359609C00711161 /* XCTestManifests.swift */; };
-		7E719FD021EA88D6005E5861 /* LockableTestCaseBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E719FCF21EA88D6005E5861 /* LockableTestCaseBase.swift */; };
+		7E719FD021EA88D6005E5861 /* XCTestCase+CommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E719FCF21EA88D6005E5861 /* XCTestCase+CommonTests.swift */; };
 		7E719FD221EA8CAB005E5861 /* NSLockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E719FD121EA8CAB005E5861 /* NSLockTests.swift */; };
 		7E719FD421EA8CB9005E5861 /* NSRecursiveLockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E719FD321EA8CB9005E5861 /* NSRecursiveLockTests.swift */; };
 		7E719FD821EA9A50005E5861 /* UnfairLockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E719FD721EA9A50005E5861 /* UnfairLockTests.swift */; };
@@ -68,8 +66,6 @@
 
 /* Begin PBXFileReference section */
 		7E4F371C23566E6F00711161 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		7E4F372F235925E500711161 /* LockableTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockableTestCase.swift; sourceTree = "<group>"; };
-		7E4F373323592EFD00711161 /* RecursiveLockableTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecursiveLockableTestCase.swift; sourceTree = "<group>"; };
 		7E4F373C23593EBA00711161 /* Lockable+DefaultImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lockable+DefaultImplementation.swift"; sourceTree = "<group>"; };
 		7E4F37412359420400711161 /* core_swift_std_lock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = core_swift_std_lock.h; sourceTree = "<group>"; };
 		7E4F37422359420400711161 /* std_lock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = std_lock.cpp; sourceTree = "<group>"; };
@@ -83,7 +79,7 @@
 		7E4F37642359609C00711161 /* XCTestManifests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		7E4F376723599E8300711161 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		7E4F37682359A3C600711161 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		7E719FCF21EA88D6005E5861 /* LockableTestCaseBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockableTestCaseBase.swift; sourceTree = "<group>"; };
+		7E719FCF21EA88D6005E5861 /* XCTestCase+CommonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+CommonTests.swift"; sourceTree = "<group>"; };
 		7E719FD121EA8CAB005E5861 /* NSLockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLockTests.swift; sourceTree = "<group>"; };
 		7E719FD321EA8CB9005E5861 /* NSRecursiveLockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRecursiveLockTests.swift; sourceTree = "<group>"; };
 		7E719FD721EA9A50005E5861 /* UnfairLockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnfairLockTests.swift; sourceTree = "<group>"; };
@@ -250,9 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_22 /* FakeLock.swift */,
-				7E719FCF21EA88D6005E5861 /* LockableTestCaseBase.swift */,
-				7E4F372F235925E500711161 /* LockableTestCase.swift */,
-				7E4F373323592EFD00711161 /* RecursiveLockableTestCase.swift */,
+				7E719FCF21EA88D6005E5861 /* XCTestCase+CommonTests.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -434,11 +428,9 @@
 				OBJ_64 /* LockableTests.swift in Sources */,
 				7E4F374C235943CC00711161 /* CPPStdLockTests.swift in Sources */,
 				7E4F37652359609C00711161 /* XCTestManifests.swift in Sources */,
-				7E719FD021EA88D6005E5861 /* LockableTestCaseBase.swift in Sources */,
+				7E719FD021EA88D6005E5861 /* XCTestCase+CommonTests.swift in Sources */,
 				7E4F374B235943CC00711161 /* RecursiveCPPStdLockTests.swift in Sources */,
-				7E4F373423592EFD00711161 /* RecursiveLockableTestCase.swift in Sources */,
 				7EBECC2A21F5060D00F95988 /* RecursivePThreadLockTests.swift in Sources */,
-				7E4F3730235925E500711161 /* LockableTestCase.swift in Sources */,
 				OBJ_65 /* PThreadLockTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

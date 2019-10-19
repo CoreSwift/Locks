@@ -12,10 +12,21 @@
 import CoreSwiftLocks
 import XCTest
 
-final class RecursiveCPPStdLockTests: RecursiveLockableTestCase {
+class RecursiveCPPStdLockTests: XCTestCase {
 
-  override func makeLock() -> RecursiveLockable {
-    return RecursiveCPPStdLock()
+  func testBasicLocking() {
+    let lock = RecursiveCPPStdLock()
+    runBasicLockTest(lock: lock)
+  }
+
+  func testRecursiveLocking() {
+    let lock = RecursiveCPPStdLock()
+    runRecursiveLockTest(lock: lock)
+  }
+
+  func testPerformance() {
+    let lock = RecursiveCPPStdLock()
+    runPerformanceTest(lock: lock)
   }
 
 }

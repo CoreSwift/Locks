@@ -12,10 +12,16 @@
 import CoreSwiftLocks
 import XCTest
 
-final class CPPStdLockTests: LockableTestCase {
+class CPPStdLockTests: XCTestCase {
 
-  override func makeLock() -> Lockable {
-    return CPPStdLock()
+  final func testBasicLocking() throws {
+    let lock = CPPStdLock()
+    runBasicLockTest(lock: lock)
+  }
+
+  final func testPerformance() {
+    let lock = CPPStdLock()
+    runPerformanceTest(lock: lock)
   }
 
 }
