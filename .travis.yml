@@ -21,12 +21,13 @@ jobs:
       xcode_project: Locks.xcodeproj
       xcode_scheme: CoreSwiftLocks
       xcode_destination: 'platform=macOS'
+      after_success: bash <(curl -s https://codecov.io/bash)
     - <<: *xcode_test
       name: iOS / Xcode 11
-      xcode_destination: 'platform=iOS Simulator,OS=12.2,name=iPhone SE'
+      xcode_destination: 'platform=iOS Simulator,OS=13.1,name=iPhone 8'
     - <<: *xcode_test
       name: tvOS / Xcode 11
-      xcode_destination: 'platform=tvOS Simulator,OS=12.2,name=Apple TV'
+      xcode_destination: 'platform=tvOS Simulator,OS=13.0,name=Apple TV'
 
     #
     # SwiftPM Apple Tests
