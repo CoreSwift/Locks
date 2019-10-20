@@ -9,37 +9,29 @@
 //
 // -------------------------------------------------------------------------- //
 
-import CoreSwiftLocks
+import Locks
 import XCTest
 
-class RecursivePTthreadLockTests: XCTestCase {
+class RecursiveCPPStdLockTests: XCTestCase {
 
   func testBasicLocking() {
-    #if canImport(Darwin) || canImport(Glibc)
-    let lock = RecursivePThreadLock()
+    let lock = RecursiveCPPStdLock()
     runBasicLockTest(lock: lock)
-    #endif  // canImport(Darwin) || canImport(Glibc)
   }
 
   func testRecursiveLocking() {
-    #if canImport(Darwin) || canImport(Glibc)
-    let lock = RecursivePThreadLock()
+    let lock = RecursiveCPPStdLock()
     runRecursiveLockTest(lock: lock)
-    #endif  // canImport(Darwin) || canImport(Glibc)
   }
 
   final func testTryLock() throws {
-    #if canImport(Darwin) || canImport(Glibc)
-    let lock = RecursivePThreadLock()
+    let lock = RecursiveCPPStdLock()
     runTryLockTest(lock: lock)
-    #endif  // canImport(Darwin) || canImport(Glibc)
   }
 
   func testPerformance() {
-    #if canImport(Darwin) || canImport(Glibc)
-    let lock = RecursivePThreadLock()
+    let lock = RecursiveCPPStdLock()
     runPerformanceTest(lock: lock)
-    #endif  // canImport(Darwin) || canImport(Glibc)
   }
 
 }

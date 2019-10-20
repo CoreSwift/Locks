@@ -9,7 +9,7 @@
 //
 // -------------------------------------------------------------------------- //
 
-import CoreSwiftCxxLock
+import CxxLock
 
 /// Implementation of `Lockable` which uses a `std::mutex`.
 public class CPPStdLock: Lockable {

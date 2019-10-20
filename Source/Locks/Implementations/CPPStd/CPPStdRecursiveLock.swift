@@ -9,7 +9,7 @@
 //
 // -------------------------------------------------------------------------- //
 
-import CoreSwiftCxxLock
+import CxxLock
 
 /// Implementation of `RecursiveLockable` which uses a `std::recursive_mutex`.
 public class RecursiveCPPStdLock: RecursiveLockable {

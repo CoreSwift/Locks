@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "Locks::Locks"
                BuildableName = "CoreSwiftLocks.framework"
-               BlueprintName = "CoreSwiftLocks"
+               BlueprintName = "Locks"
                ReferencedContainer = "container:Locks.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7E4F375023594A1500711161"
-               BuildableName = "libCoreSwiftCxxLock.a"
-               BlueprintName = "CoreSwiftCxxLock"
+               BuildableName = "libCxxLock.a"
+               BlueprintName = "CxxLock"
                ReferencedContainer = "container:Locks.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -92,8 +92,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7E4F375023594A1500711161"
-            BuildableName = "libCoreSwiftCxxLock.a"
-            BlueprintName = "CoreSwiftCxxLock"
+            BuildableName = "libCxxLock.a"
+            BlueprintName = "CxxLock"
             ReferencedContainer = "container:Locks.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

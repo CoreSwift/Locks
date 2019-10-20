@@ -1,8 +1,8 @@
 import XCTest
 
-import CoreSwiftLocksTests
+import LocksTests
 
 var tests = [XCTestCaseEntry]()
-tests += CoreSwiftLocksTests.__allTests()
+tests += LocksTests.__allTests()
 
 XCTMain(tests)

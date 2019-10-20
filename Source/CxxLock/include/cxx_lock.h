@@ -14,8 +14,8 @@
 //
 // -------------------------------------------------------------------------- //
 
-#ifndef core_swift_std_lock_h
-#define core_swift_std_lock_h
+#ifndef cxx_lock_h
+#define cxx_lock_h
 
 #include <stdbool.h>
 
@@ -47,4 +47,4 @@ bool CoreSwiftCxxLockTry(CoreSwiftCxxLockRef _Nonnull lock);
 }
 #endif
 
-#endif /* core_swift_std_lock_h */
+#endif /* cxx_lock_h */

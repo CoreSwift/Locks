@@ -9,25 +9,31 @@
 //
 // -------------------------------------------------------------------------- //
 
-import CoreSwiftLocks
+import Locks
 import XCTest
 
-class NSLockTests: XCTestCase {
+@available(OSX 10.12, iOS 10, tvOS 10, *)
+class UnfairLockTests: XCTestCase {
 
   final func testBasicLocking() throws {
-    let lock = NSLock()
+    #if canImport(Darwin)
+    let lock = UnfairLock()
     runBasicLockTest(lock: lock)
+    #endif  // canImport(Darwin)
   }
 
   final func testTryLock() throws {
-    let lock = NSLock()
+    #if canImport(Darwin)
+    let lock = UnfairLock()
     runTryLockTest(lock: lock)
+    #endif  // canImport(Darwin)
   }
 
   final func testPerformance() {
-    let lock = NSLock()
+    #if canImport(Darwin)
+    let lock = UnfairLock()
     runPerformanceTest(lock: lock)
+    #endif  // canImport(Darwin)
   }
 
 }
-

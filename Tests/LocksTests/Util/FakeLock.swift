@@ -9,7 +9,7 @@
 //
 // -------------------------------------------------------------------------- //
 
-import CoreSwiftLocks
+import Locks
 
 /// A fake `Lockable` implementation which isn't suitable for real use.
 class FakeLock: Lockable {

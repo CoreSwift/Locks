@@ -1,0 +1,4 @@
+module CxxLock {
+    header "cxx_lock.h"
+    export *
+}

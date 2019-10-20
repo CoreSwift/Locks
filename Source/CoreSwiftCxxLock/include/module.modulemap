@@ -1,4 +1,0 @@
-module CoreSwiftCxxLock {
-    header "core_swift_std_lock.h"
-    export *
-}

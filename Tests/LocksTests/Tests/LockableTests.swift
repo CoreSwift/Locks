@@ -9,7 +9,7 @@
 //
 // -------------------------------------------------------------------------- //
 
-import CoreSwiftLocks
+import Locks
 import XCTest
 
 class LockableTests: XCTestCase {

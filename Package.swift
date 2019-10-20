@@ -3,26 +3,26 @@
 import PackageDescription
 
 let package = Package(
-    name: "CoreSwiftLocks",
+    name: "Locks",
     products: [
         .library(
-            name: "CoreSwiftLocks",
-            targets: ["CoreSwiftLocks"]),
+            name: "Locks",
+            targets: ["Locks"]),
     ],
     dependencies: [
     ],
     targets: [
         .target(
-            name: "CoreSwiftLocks",
+            name: "Locks",
             dependencies: [
-              .target(name: "CoreSwiftCxxLock"),
+              .target(name: "CxxLock"),
             ]),
         .target(
-          name: "CoreSwiftCxxLock",
+          name: "CxxLock",
           dependencies: []),
         .testTarget(
-            name: "CoreSwiftLocksTests",
-            dependencies: ["CoreSwiftLocks"]),
+            name: "LocksTests",
+            dependencies: ["Locks"]),
     ],
     cxxLanguageStandard: .cxx14
 )

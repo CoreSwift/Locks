@@ -9,23 +9,28 @@
 //
 // -------------------------------------------------------------------------- //
 
-import CoreSwiftLocks
+import Locks
 import XCTest
 
-class CPPStdLockTests: XCTestCase {
+class NSRecursiveLockTests: XCTestCase {
 
-  final func testBasicLocking() throws {
-    let lock = CPPStdLock()
+  func testBasicLocking() {
+    let lock = NSRecursiveLock()
     runBasicLockTest(lock: lock)
   }
 
+  func testRecursiveLocking() {
+    let lock = NSRecursiveLock()
+    runRecursiveLockTest(lock: lock)
+  }
+
   final func testTryLock() throws {
-    let lock = CPPStdLock()
+    let lock = NSRecursiveLock()
     runTryLockTest(lock: lock)
   }
 
-  final func testPerformance() {
-    let lock = CPPStdLock()
+  func testPerformance() {
+    let lock = NSRecursiveLock()
     runPerformanceTest(lock: lock)
   }
 

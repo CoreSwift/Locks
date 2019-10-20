@@ -9,7 +9,7 @@
 //
 // -------------------------------------------------------------------------- //
 
-#include "core_swift_std_lock.h"
+#include "cxx_lock.h"
 
 #include <memory>
 #include <mutex>
