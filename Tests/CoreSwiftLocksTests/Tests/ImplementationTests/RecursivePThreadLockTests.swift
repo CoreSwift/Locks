@@ -28,6 +28,13 @@ class RecursivePTthreadLockTests: XCTestCase {
     #endif  // canImport(Darwin) || canImport(Glibc)
   }
 
+  final func testTryLock() throws {
+    #if canImport(Darwin) || canImport(Glibc)
+    let lock = RecursivePThreadLock()
+    runTryLockTest(lock: lock)
+    #endif  // canImport(Darwin) || canImport(Glibc)
+  }
+
   func testPerformance() {
     #if canImport(Darwin) || canImport(Glibc)
     let lock = RecursivePThreadLock()

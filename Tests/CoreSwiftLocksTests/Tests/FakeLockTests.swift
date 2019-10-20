@@ -27,4 +27,16 @@ class FakeLockTests: XCTestCase {
     lock.unlock()
     XCTAssertEqual(lock.count, 0)
   }
+
+  func testTryLock() {
+    let lock = FakeLock()
+
+    XCTAssertEqual(lock.count, 0)
+    XCTAssertTrue(lock.tryLock())
+    XCTAssertEqual(lock.count, 1)
+    XCTAssertFalse(lock.tryLock())
+    XCTAssertEqual(lock.count, 1)
+    lock.unlock()
+    XCTAssertEqual(lock.count, 0)
+  }
 }

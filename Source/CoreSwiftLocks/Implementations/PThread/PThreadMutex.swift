@@ -9,11 +9,11 @@
 //
 // -------------------------------------------------------------------------- //
 
-#if canImport(Foundation) || canImport(Darwin) || canImport(Glibc)
+#if canImport(Darwin) || canImport(Glibc)
 
-#if canImport(Foundation)
 import Foundation
-#elseif canImport(Darwin)
+
+#if canImport(Darwin)
 import Darwin.C
 #elseif canImport(Glibc)
 import Glibc
@@ -41,21 +41,6 @@ class PThreadMutex {
     }
   }
 
-  /// Errors which can be thrown by the mutex.
-  enum Errors: Error {
-    /// A well-defined POSIX error occurred.
-    case posixError(code: Int32)
-
-    /// Makes an appropriate POSIX error based on the current platform.
-    static func makePOSIXError(code: Int32) -> Error {
-      #if canImport(Foundation)
-      return NSError(domain: NSPOSIXErrorDomain, code: Int(code))
-      #else
-      return Errors.posixError(code: code)
-      #endif
-    }
-  }
-
   /// The pthread mutex backing this class.
   private var mutex = pthread_mutex_t()
 
@@ -70,7 +55,7 @@ class PThreadMutex {
 
     let code = pthread_mutex_init(&mutex, &attributes)
     guard code == 0 else {
-      throw Errors.makePOSIXError(code: code)
+      throw NSError(domain: NSPOSIXErrorDomain, code: Int(code))
     }
   }
 
@@ -82,7 +67,7 @@ class PThreadMutex {
   func lock() throws {
     let code = pthread_mutex_lock(&self.mutex)
     guard code == 0 else {
-      throw Errors.makePOSIXError(code: code)
+      throw NSError(domain: NSPOSIXErrorDomain, code: Int(code))
     }
   }
 
@@ -90,7 +75,7 @@ class PThreadMutex {
   func unlock() throws {
     let code = pthread_mutex_unlock(&self.mutex)
     guard code == 0 else {
-      throw Errors.makePOSIXError(code: code)
+      throw NSError(domain: NSPOSIXErrorDomain, code: Int(code))
     }
   }
 
@@ -103,10 +88,10 @@ class PThreadMutex {
     case EBUSY:
       return false
     default:
-      throw Errors.makePOSIXError(code: code)
+      throw NSError(domain: NSPOSIXErrorDomain, code: Int(code))
     }
   }
 
 }
 
-#endif  // canImport(Foundation) || canImport(Darwin) || canImport(Glibc)
+#endif  // canImport(Darwin) || canImport(Glibc)

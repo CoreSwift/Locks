@@ -15,17 +15,18 @@ import XCTest
 class NSLockTests: XCTestCase {
 
   final func testBasicLocking() throws {
-    #if canImport(Foundation)
     let lock = NSLock()
     runBasicLockTest(lock: lock)
-    #endif  // canImport(Foundation)
+  }
+
+  final func testTryLock() throws {
+    let lock = NSLock()
+    runTryLockTest(lock: lock)
   }
 
   final func testPerformance() {
-    #if canImport(Foundation)
     let lock = NSLock()
     runPerformanceTest(lock: lock)
-    #endif  // canImport(Foundation)
   }
 
 }

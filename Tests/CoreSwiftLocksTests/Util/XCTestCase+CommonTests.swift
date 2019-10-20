@@ -24,7 +24,7 @@ extension XCTestCase {
   func runPerformanceTest(lock: Lockable) {
     var value = 0
     self.measure {
-      runBlock(concurrency: 16, repetitions: 1_000) {
+      runBlock(concurrency: 16, repetitions: 100_000) {
         lock.lock()
         value = value + 2
         value = value - 1
@@ -49,6 +49,14 @@ extension XCTestCase {
     XCTAssertEqual(value, 32_000)
   }
 
+  func runTryLockTest(lock: Lockable) {
+    #if canImport(Dispatch)
+    runTryLockTest_Dispatch(lock: lock)
+    #else
+    XCTFail("Not implemented")
+    #endif
+  }
+
   /// Runs a basic smoke test on the given recursive lock.
   ///
   /// - Parameter lock: The lock under test.
@@ -61,7 +69,9 @@ extension XCTestCase {
       value = value + 2
       value = value - 1
 
-      lock.lock()
+      // Because it's a recursive lock and we are already holding the lock, this `tryLock` should
+      // always succeed.
+      XCTAssertTrue(lock.tryLock())
       value = value + 2
       value = value - 1
       lock.unlock()
@@ -128,20 +138,42 @@ extension XCTestCase {
     let group = DispatchGroup()
 
     for queueIdx in 0..<concurrency {
-      group.enter()
       let queue = queues[queueIdx % queues.count]
-      queue.async(execute: {
+      queue.async(group: group) {
         for _ in 0..<repetitions {
           block()
         }
-        group.leave()
-      })
+      }
     }
 
     let result = group.wait(timeout: timeout)
     XCTAssertEqual(result, .success, "Timed out waiting for threads to finish")
   }
 
+  private final func runTryLockTest_Dispatch(lock: Lockable) {
+    let outerQueue = DispatchQueue.global(qos: DispatchQoS.QoSClass.userInteractive)
+    let innerQueue = DispatchQueue.global(qos: DispatchQoS.QoSClass.utility)
+    let outerGroup = DispatchGroup()
+
+    outerQueue.async(group: outerGroup) {
+      // First try should always succeed.
+      XCTAssertTrue(lock.tryLock())
+
+      let innerGroup = DispatchGroup()
+      innerQueue.async(group: innerGroup) {
+        // Outer queue still holding the lock, this `tryLock` should always fail.
+        XCTAssertFalse(lock.tryLock())
+      }
+
+      let result = innerGroup.wait(timeout: .now() + 20)
+      XCTAssertEqual(result, .success, "Timed out waiting for inner queue to finish")
+
+      lock.unlock()
+    }
+
+    let result = outerGroup.wait(timeout: .now() + 60)
+    XCTAssertEqual(result, .success, "Timed out waiting for outer queue to finish")
+  }
 }
 
 #endif  // canImport(Dispatch)

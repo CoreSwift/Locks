@@ -9,11 +9,9 @@
 //
 // -------------------------------------------------------------------------- //
 
-#if canImport(Foundation) || canImport(Darwin) || canImport(Glibc)
+#if canImport(Darwin) || canImport(Glibc)
 
-#if canImport(Foundation)
-import Foundation
-#elseif canImport(Darwin)
+#if canImport(Darwin)
 import Darwin.C
 #elseif canImport(Glibc)
 import Glibc
@@ -31,4 +29,4 @@ public class RecursivePThreadLock: PThreadLock, RecursiveLockable {
   }
 }
 
-#endif  // canImport(Foundation) || canImport(Darwin) || canImport(Glibc)
+#endif  // canImport(Darwin) || canImport(Glibc)

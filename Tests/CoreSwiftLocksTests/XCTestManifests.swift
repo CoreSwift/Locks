@@ -8,6 +8,7 @@ extension CPPStdLockTests {
     static let __allTests__CPPStdLockTests = [
         ("testBasicLocking", testBasicLocking),
         ("testPerformance", testPerformance),
+        ("testTryLock", testTryLock),
     ]
 }
 
@@ -17,6 +18,7 @@ extension FakeLockTests {
     // to regenerate.
     static let __allTests__FakeLockTests = [
         ("testLock", testLock),
+        ("testTryLock", testTryLock),
     ]
 }
 
@@ -25,10 +27,10 @@ extension LockableTests {
     //   `swift test --generate-linuxmain`
     // to regenerate.
     static let __allTests__LockableTests = [
-        ("testRun_MultipleLocks", testRun_MultipleLocks),
-        ("testRun_Recursive", testRun_Recursive),
-        ("testRun_ReturnValue", testRun_ReturnValue),
-        ("testRun_UsesLock", testRun_UsesLock),
+        ("testLocked_MultipleLocks", testLocked_MultipleLocks),
+        ("testLocked_Recursive", testLocked_Recursive),
+        ("testLocked_ReturnValue", testLocked_ReturnValue),
+        ("testLocked_UsesLock", testLocked_UsesLock),
     ]
 }
 
@@ -39,6 +41,7 @@ extension NSLockTests {
     static let __allTests__NSLockTests = [
         ("testBasicLocking", testBasicLocking),
         ("testPerformance", testPerformance),
+        ("testTryLock", testTryLock),
     ]
 }
 
@@ -50,6 +53,7 @@ extension NSRecursiveLockTests {
         ("testBasicLocking", testBasicLocking),
         ("testPerformance", testPerformance),
         ("testRecursiveLocking", testRecursiveLocking),
+        ("testTryLock", testTryLock),
     ]
 }
 
@@ -60,6 +64,7 @@ extension PThreadLockTests {
     static let __allTests__PThreadLockTests = [
         ("testBasicLocking", testBasicLocking),
         ("testPerformance", testPerformance),
+        ("testTryLock", testTryLock),
     ]
 }
 
@@ -71,6 +76,7 @@ extension RecursiveCPPStdLockTests {
         ("testBasicLocking", testBasicLocking),
         ("testPerformance", testPerformance),
         ("testRecursiveLocking", testRecursiveLocking),
+        ("testTryLock", testTryLock),
     ]
 }
 
@@ -82,6 +88,7 @@ extension RecursivePTthreadLockTests {
         ("testBasicLocking", testBasicLocking),
         ("testPerformance", testPerformance),
         ("testRecursiveLocking", testRecursiveLocking),
+        ("testTryLock", testTryLock),
     ]
 }
 
@@ -92,6 +99,7 @@ extension UnfairLockTests {
     static let __allTests__UnfairLockTests = [
         ("testBasicLocking", testBasicLocking),
         ("testPerformance", testPerformance),
+        ("testTryLock", testTryLock),
     ]
 }
 

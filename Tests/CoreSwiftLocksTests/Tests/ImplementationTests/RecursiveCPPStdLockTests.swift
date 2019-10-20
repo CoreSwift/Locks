@@ -24,6 +24,11 @@ class RecursiveCPPStdLockTests: XCTestCase {
     runRecursiveLockTest(lock: lock)
   }
 
+  final func testTryLock() throws {
+    let lock = RecursiveCPPStdLock()
+    runTryLockTest(lock: lock)
+  }
+
   func testPerformance() {
     let lock = RecursiveCPPStdLock()
     runPerformanceTest(lock: lock)

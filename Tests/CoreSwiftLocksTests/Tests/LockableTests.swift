@@ -14,7 +14,7 @@ import XCTest
 
 class LockableTests: XCTestCase {
   /// Test that ensures the `locked` method actually uses the given lock.
-  func testRun_UsesLock() {
+  func testLocked_UsesLock() {
     let lock = FakeLock()
 
     XCTAssertEqual(lock.count, 0)
@@ -25,7 +25,7 @@ class LockableTests: XCTestCase {
   }
 
   /// Test that the `locked` method returns the proper result.
-  func testRun_ReturnValue() {
+  func testLocked_ReturnValue() {
     class Box<T> {
       let value: T
       init(_ value: T) { self.value = value }
@@ -49,7 +49,7 @@ class LockableTests: XCTestCase {
   }
 
   /// Test that the `locked` method uses the same mutex when called recursively.
-  func testRun_Recursive() {
+  func testLocked_Recursive() {
     let lock = FakeLock()
 
     XCTAssertEqual(lock.count, 0)
@@ -66,7 +66,7 @@ class LockableTests: XCTestCase {
   }
 
   /// Test that the `locked` method uses different mutexes, even when called recursively.
-  func testRun_MultipleLocks() {
+  func testLocked_MultipleLocks() {
     let outer = FakeLock()
     let inner = FakeLock()
 

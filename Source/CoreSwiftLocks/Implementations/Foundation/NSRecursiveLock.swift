@@ -9,8 +9,6 @@
 //
 // -------------------------------------------------------------------------- //
 
-#if canImport(Foundation)
-
 import Foundation
 
 extension NSRecursiveLock: RecursiveLockable {
@@ -20,5 +18,3 @@ extension NSRecursiveLock: RecursiveLockable {
   }
 
 }
-
-#endif  // canImport(Foundation)

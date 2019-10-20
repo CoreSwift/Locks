@@ -9,8 +9,6 @@
 //
 // -------------------------------------------------------------------------- //
 
-#if canImport(Foundation)
-
 import Foundation
 
 extension NSLock: Lockable {
@@ -20,5 +18,3 @@ extension NSLock: Lockable {
   }
 
 }
-
-#endif  // canImport(Foundation)

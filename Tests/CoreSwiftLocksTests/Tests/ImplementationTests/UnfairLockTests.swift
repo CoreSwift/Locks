@@ -22,6 +22,13 @@ class UnfairLockTests: XCTestCase {
     #endif  // canImport(Darwin)
   }
 
+  final func testTryLock() throws {
+    #if canImport(Darwin)
+    let lock = UnfairLock()
+    runTryLockTest(lock: lock)
+    #endif  // canImport(Darwin)
+  }
+
   final func testPerformance() {
     #if canImport(Darwin)
     let lock = UnfairLock()

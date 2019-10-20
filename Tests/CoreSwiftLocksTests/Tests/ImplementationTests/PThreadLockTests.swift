@@ -21,6 +21,13 @@ class PThreadLockTests: XCTestCase {
     #endif  // canImport(Darwin) || canImport(Glibc)
   }
 
+  final func testTryLock() throws {
+    #if canImport(Darwin) || canImport(Glibc)
+    let lock = PThreadLock()
+    runTryLockTest(lock: lock)
+    #endif  // canImport(Darwin) || canImport(Glibc)
+  }
+
   final func testPerformance() {
     #if canImport(Darwin) || canImport(Glibc)
     let lock = PThreadLock()

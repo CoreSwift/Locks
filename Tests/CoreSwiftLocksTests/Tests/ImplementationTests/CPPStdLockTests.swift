@@ -19,6 +19,11 @@ class CPPStdLockTests: XCTestCase {
     runBasicLockTest(lock: lock)
   }
 
+  final func testTryLock() throws {
+    let lock = CPPStdLock()
+    runTryLockTest(lock: lock)
+  }
+
   final func testPerformance() {
     let lock = CPPStdLock()
     runPerformanceTest(lock: lock)

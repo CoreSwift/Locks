@@ -15,24 +15,23 @@ import XCTest
 class NSRecursiveLockTests: XCTestCase {
 
   func testBasicLocking() {
-    #if canImport(Foundation)
     let lock = NSRecursiveLock()
     runBasicLockTest(lock: lock)
-    #endif  // canImport(Foundation)
   }
 
   func testRecursiveLocking() {
-    #if canImport(Foundation)
     let lock = NSRecursiveLock()
     runRecursiveLockTest(lock: lock)
-    #endif  // canImport(Foundation)
+  }
+
+  final func testTryLock() throws {
+    let lock = NSRecursiveLock()
+    runTryLockTest(lock: lock)
   }
 
   func testPerformance() {
-    #if canImport(Foundation)
     let lock = NSRecursiveLock()
     runPerformanceTest(lock: lock)
-    #endif  // canImport(Foundation)
   }
 
 }
